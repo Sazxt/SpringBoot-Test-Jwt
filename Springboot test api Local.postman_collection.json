@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "8437fb0c-47db-4463-a7af-875ba79a3630",
+		"name": "Springboot test api Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21623496"
+	},
+	"item": [
+		{
+			"name": "create-data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ok\",\r\n    \"alamat\":\"ok\",\r\n    \"email\":\"ok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/data-create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"data-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show-all-data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MTczMzk0MDYsImV4cCI6MTcxNzM0MDg0Nn0.8BqagVQnKh366j6kVr38Ce92RZeCl3zw5zjw6CkSvc8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/all-data",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"all-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-data",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/data-delete/6",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"data-delete",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"saz\",\r\n    \"alamat\":\"yaelah\",\r\n    \"email\":\"Done ga bang ?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/update-data/5",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"update-data",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-data-users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"alamat\" : \"jl.sudirman\",\r\n    \"nik\" : \"1290480234235\",\r\n    \"password\" : \"123\",\r\n    \"tingkat\" : \"sparkla\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/add-users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"add-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login-Jwt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/auth/signin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api-Resource-Jwt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MTczMzk0MDYsImV4cCI6MTcxNzM0MDg0Nn0.8BqagVQnKh366j6kVr38Ce92RZeCl3zw5zjw6CkSvc8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/resource",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"resource"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
