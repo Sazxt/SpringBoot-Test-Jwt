@@ -1,14 +1,12 @@
 package com.kitabisa.kitabisa.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.kitabisa.kitabisa.dto.UsersDataDTO;
 import com.kitabisa.kitabisa.model.Users;
 import com.kitabisa.kitabisa.repository.UsersdataRepository;
 

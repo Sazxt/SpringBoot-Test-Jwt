@@ -32,26 +32,14 @@ public class Configscurity {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    // @Bean
-    // public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    //     http
-    //         .authorizeHttpRequests((requests) -> requests
-    //             .requestMatchers("/login").permitAll()
-    //             .anyRequest().authenticated()
-    //         )
-    //         .formLogin((form) -> form
-    //             .loginPage("/login")
-    //             .defaultSuccessUrl("/home", true)
-    //             .permitAll()
-    //         );
-    //     return http.build();
-    // }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(request -> request.requestMatchers("/api/v1/auth/**")
-                        .permitAll().anyRequest().authenticated())
+                .authorizeHttpRequests(request -> request
+                    .requestMatchers("/api/v1/auth/**").permitAll()
+                    .requestMatchers("/add-users").permitAll() // Menambahkan pengecualian untuk URL "/api/v1/public/**"
+                    .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(
                         jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
